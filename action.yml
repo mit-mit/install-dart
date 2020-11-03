@@ -1,0 +1,12 @@
+name: "Install Dart"
+description: "Installs the Dart SDK"
+inputs:
+  channel:
+    description: "The release channel to install from ('stable', 'beta', or 'dev')"
+    required: false
+    default: "stable"
+runs:
+  using: "composite"
+  steps:
+    - run: ./install.sh ${{ inputs.channel }}
+      shell: bash
