@@ -16,7 +16,7 @@ ARCH="${3:-x64}"
 OS=$(echo "$OS" | awk '{print tolower($0)}')
 echo "Installing Dart SDK from the ${CHANNEL} channel on ${OS}-${ARCH}"
 
-# Define colors
+# Define colors.
 WHITE='\033[0m'
 GREEN='\033[32m'
 RED='\033[31m'
@@ -35,9 +35,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 rm "${HOME}/dartsdk.zip"
-export PATH="${HOME}/dart-sdk/bin:${PATH}"
-export PATH="${PATH}:${HOME}/.pub-cache/bin"
-echo $PATH
+
+# Update paths.
+"${HOME}/.pub-cache/bin" >> $GITHUB_PATH
+"${HOME}/dart-sdk/bin" >> $GITHUB_PATH
 
 # Report success.
 echo -e "${GREEN}Succesfully installed Dart SDK.${WHITE}"
