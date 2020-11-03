@@ -37,8 +37,8 @@ fi
 rm "${HOME}/dartsdk.zip"
 
 # Update paths.
-"${HOME}/.pub-cache/bin" >> $GITHUB_PATH
-"${RUNNER_TOOL_CACHE}/dart-sdk/bin" >> $GITHUB_PATH
+echo "${HOME}/.pub-cache/bin" >> $GITHUB_PATH
+echo "${RUNNER_TOOL_CACHE}/dart-sdk/bin" >> $GITHUB_PATH
 
 # Report success.
 echo -e "${GREEN}Succesfully installed Dart SDK.${WHITE}"
