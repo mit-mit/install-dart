@@ -29,7 +29,7 @@ echo "Downloading ${URL}..."
 
 # Download installation zip.
 curl --connect-timeout 15 --retry 5 "$URL" > "${HOME}/dartsdk.zip"
-unzip "${HOME}/dartsdk.zip" -d $RUNNER_TOOL_CACHE > /dev/null
+unzip "${HOME}/dartsdk.zip" -d "${RUNNER_TOOL_CACHE}" > /dev/null
 if [ $? -ne 0 ]; then
   echo -e "${RED}ERROR: Download failed! Please check passed arguments.${WHITE}"
   exit 1
