@@ -25,7 +25,7 @@ RED='\033[31m'
 # https://dart.dev/tools/sdk/archive#download-urls
 PREFIX="https://storage.googleapis.com/dart-archive/channels"
 URL="${PREFIX}/${CHANNEL}/release/latest/sdk/dartsdk-${OS}-${ARCH}-release.zip"
-ECHO "Downloading ${URL}..."
+echo "Downloading ${URL}..."
 
 # Download installation zip.
 curl --connect-timeout 15 --retry 5 "$URL" > "${HOME}/dartsdk.zip"
@@ -35,8 +35,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 rm "${HOME}/dartsdk.zip"
-export PATH="${DART_SDK}/bin:${PATH}"
-export PATH="${TRAVIS_HOME}/.pub-cache/bin:${PATH}"
+export PATH="${HOME}/dart-sdk/bin:${PATH}"
+export PATH="${PATH}:${HOME}/.pub-cache/bin"
 
 # Report success.
 echo -e "${GREEN}Succesfully installed Dart SDK.${WHITE}"
