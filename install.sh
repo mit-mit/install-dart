@@ -28,8 +28,8 @@ URL="${PREFIX}/${CHANNEL}/release/latest/sdk/dartsdk-${OS}-${ARCH}-release.zip"
 echo "Downloading ${URL}..."
 
 # Download installation zip.
-curl --connect-timeout 15 --retry 5 "$URL" > "${HOME}/dartsdk.zip"
-unzip "${HOME}/dartsdk.zip" -d $HOME > /dev/null
+curl --connect-timeout 15 --retry 5 "$URL" > "${}/dartsdk.zip"
+unzip "${HOME}/dartsdk.zip" -d $RUNNER_TOOL_CACHE > /dev/null
 if [ $? -ne 0 ]; then
   echo -e "${RED}ERROR: Download failed! Please check passed arguments.${WHITE}"
   exit 1
@@ -38,7 +38,7 @@ rm "${HOME}/dartsdk.zip"
 
 # Update paths.
 "${HOME}/.pub-cache/bin" >> $GITHUB_PATH
-"${HOME}/dart-sdk/bin" >> $GITHUB_PATH
+"${RUNNER_TOOL_CACHE}/dart-sdk/bin" >> $GITHUB_PATH
 
 # Report success.
 echo -e "${GREEN}Succesfully installed Dart SDK.${WHITE}"
