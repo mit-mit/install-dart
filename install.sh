@@ -4,16 +4,17 @@
 # Bash script for downloading and installing a Dart SDK.                      #
 # Takes three params; first listed is the default:                            #
 # $1: Dart channel: stable|beta|dev                                           #
-# $2: OS: linux|windows|macos                                                 #
+# $2: OS: Linux|Windows|macOS                                                 #
 # $3: ARCH: x64|ia32                                                          #
 ###############################################################################
 
-echo "Installing Dart SDK from the $1 channel on $2"
 
 # Parse args.
 CHANNEL="${1:-stable}"
-OS="${2:-linux}"
+OS="${2:-Linux}"
 ARCH="${3:-x64}"
+OS=$(echo "$OS" | awk '{print tolower($0)}')
+echo "Installing Dart SDK from the ${CHANNEL} channel on ${OS}-${ARCH}"
 
 # Define colors
 WHITE='\033[0m'
