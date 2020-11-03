@@ -37,6 +37,7 @@ fi
 rm "${HOME}/dartsdk.zip"
 export PATH="${HOME}/dart-sdk/bin:${PATH}"
 export PATH="${PATH}:${HOME}/.pub-cache/bin"
+echo $PATH
 
 # Report success.
 echo -e "${GREEN}Succesfully installed Dart SDK.${WHITE}"
