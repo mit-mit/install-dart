@@ -8,5 +8,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}//install.sh ${{ inputs.channel }} ${{ runner.os }}
+    - run: $GITHUB_ACTION_PATH/install.sh ${{ inputs.channel }} ${{ runner.os }}
       shell: bash
