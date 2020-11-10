@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###############################################################################
-# Bash script for downloading and installing a Dart SDK.                      #
+# Bash script that downloads and does setup for a Dart SDK.                   #
 # Takes three params; first listed is the default:                            #
 # $1: Dart channel: stable|beta|dev                                           #
 # $2: OS: Linux|Windows|macOS                                                 #

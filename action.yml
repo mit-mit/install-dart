@@ -1,5 +1,5 @@
-name: "Install Dart"
-description: "Installs the Dart SDK"
+name: "Setup Dart SDK"
+description: "Setup the Dart SDK, and add it to the PATH"
 inputs:
   channel:
     description: "The release channel to install from ('stable', 'beta', or 'dev')"
@@ -8,5 +8,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: $GITHUB_ACTION_PATH/install.sh ${{ inputs.channel }} ${{ runner.os }}
+    - run: $GITHUB_ACTION_PATH/setup.sh ${{ inputs.channel }} ${{ runner.os }}
       shell: bash
