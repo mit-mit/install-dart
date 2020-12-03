@@ -35,5 +35,6 @@ rm "${HOME}/dartsdk.zip"
 echo "${HOME}/.pub-cache/bin" >> $GITHUB_PATH
 echo "${RUNNER_TOOL_CACHE}/dart-sdk/bin" >> $GITHUB_PATH
 
-# Report success.
-echo -e "Succesfully installed Dart SDK."
+# Report success, and print version.
+echo -e "Succesfully installed Dart SDK:"
+dart --version
